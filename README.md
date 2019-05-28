@@ -6,11 +6,11 @@ This library makes use of several models for different use cases. Detailed descr
 
 ## MLLAE
 
-MLLAE is a (Mostly) LossLess AutoEncoder model. It is trained by a neural network that attempts to map an image X -> X. The compression is accomplished by the network architecture: there is a bottleneck layer L<sub>k</sub> where bytes(L<sub>k</sub>> < bytes(X). Compressing an image applies the first portion of the network architecture (the encoder), with the output of L<sub>k</sub> being the compressed representation. Decompression requires applying the remaining part of the network, the decoder.
+MLLAE is a (Mostly) LossLess AutoEncoder model. It is trained by a neural network that attempts to map an image X -> X. The compression is accomplished by the network architecture: there is a bottleneck layer L<sub>k</sub> where bytes(L<sub>k</sub>) < bytes(X). Compressing an image applies the first portion of the network architecture (the encoder), with the output of L<sub>k</sub> being the compressed representation. Decompression requires applying the remaining part of the network, the decoder.
 
 ### MLLAE-N
 
-MLLAE-N lets you train a new MLLAE model that compresses images to a fixed size of at most N bytes. Training a new MLLAE-N model will attempt to optimize compression on the training dataset for that fixed size; note that there are theoretical limits on lossless compression in the general case, and that you may overfit to your training data.
+MLLAE-N lets you train a new MLLAE model that compresses images to a fixed size of at most N bytes. Training a new MLLAE-N model will attempt to optimize compression on the training dataset for that fixed size; note that there are theoretical limits on lossless compression in the general case, and that you will probably overfit to your training data. This is essentially a more restricted case of LAE-g.
 
 ## LAE
 
