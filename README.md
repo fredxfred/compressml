@@ -4,6 +4,9 @@ Image compression, upscaling using Machine learning. Models can be configured.
 # Models
 This library makes use of several models for different use cases.
 
+# Setup
+The long term goal is to enable python environment setup by running a single script, and to have premade models able to be downloaded and used using well-known package managers. Currently, this is not implemented. Please download and install Anaconda for Python 3.X (https://www.anaconda.com/distribution/). Then, run `conda install keras` and `conda install tensorflow`. Jupyter is included in Anaconda by default, and on *nix based systems with properly installed anaconda, can be started with `jupyter notebook` from the terminal; this is used to open .ipynb files.There will probably be other third party modules that in various files; unless otherwise noted, these will be available through conda or pip. Please feel free to contribute set up scripts that make using, training, or reconfiguring these models simpler.
+
 ## MLLAE
 
 MLLAE is a (Mostly) LossLess AutoEncoder model. It is trained by a neural network that attempts to map an image X -> X. The compression is accomplished by the network architecture: there is a bottleneck layer L<sub>k</sub> where bytes(L<sub>k</sub>> < bytes(X). Compressing an image applies the first portion of the network architecture, with the output of L<sub>k</sub> being the compressed representation. Decompression requires applying the remaining part of the network.
